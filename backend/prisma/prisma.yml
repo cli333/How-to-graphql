@@ -1,6 +1,6 @@
 # The HTTP endpoint for Prisma api
-#endpoint: ''endpoint: https://us1.prisma.sh/cml8198/backend/dev
-
+#endpoint: ''
+endpoint: https://us1.prisma.sh/cml8198/backend/dev
 
 # Points to the data file containing datamodel
 datamodel: datamodel.prisma
@@ -9,3 +9,7 @@ datamodel: datamodel.prisma
 generate:
     - generator: javascript-client
       output: ../src/generated/prisma-client
+
+hooks:
+    post-deploy:
+        - prisma generate
